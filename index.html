@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Color Generator</title>
+  <meta name="description" content="A random color palette generator built as a learning project">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>This is a Color Palette Generator</h1>
+            <h2>Here's how it works:</h2>
+            <p id="explanation">A random number generator builds a hex code and then each code is placed in one of the five boxes.</p>
+        </header>
+        <div id="paletteBox">
+            <div id="colorsBox">
+                <div id="colorOneBox" class="colors"></div>
+                <div id="colorTwoBox" class="colors"></div>
+                <div id="colorThreeBox" class="colors"></div>
+                <div id="colorFourBox" class="colors"></div>
+                <div id="colorFiveBox" class="colors"></div>
+                <button type="button" class="hexId"><p id= "colorOneHex"></p><br>
+                    <p>Click to copy Hex</p></button>
+                <button type="button" id="colorTwoHex" class="hexId"><br>
+                    <p>Click to copy Hex</p></button>
+                <button type="button" id="colorThreeHex" class="hexId"><br>
+                    <p>Click to copy Hex</p></button>
+                <button type="button" id="colorFourHex" class="hexId"><br>
+                    <p>Click to copy Hex</p></button>
+                <button type="button" id="colorFiveHex" class="hexId"><br>
+                    <p>Click to copy Hex</p></button>
+            </div>
+            <button id="newPalette" type="button">Click to get a new palette<br>(Or just press space)</button>
+        </div>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
