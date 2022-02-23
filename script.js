@@ -38,11 +38,11 @@ const assignRandomHex = () => {
     colorThreeBox.style.backgroundColor = createRandomHexArray[2];
     colorThreeHex.innertext = createRandomHexArray[2];
     colorFourBox.style.backgroundColor = createRandomHexArray[3];
-    colorFourHex.innertext = createRandomHexArray[3];    colorFiveBox.style.backgroundColor = createRandomHexArray[4];
+    colorFourHex.innertext = createRandomHexArray[3];  
+    colorFiveBox.style.backgroundColor = createRandomHexArray[4];
     colorFiveHex.innertext = createRandomHexArray[4];
 }
 
 assignRandomHex()
-console.log(assignRandomHex)
 
 newPalette.addEventListener("click", () => assignRandomHex);
