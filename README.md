@@ -8,7 +8,7 @@ This is an open source project from [DevProjects](http://www.codementor.io/proje
 Find the project requirements here: [Random color palette generator web app](https://www.codementor.io/projects/web/random-color-palette-generator-web-app-ccdljvurh6)
 
 ## Tech/framework used
-Built with ___
+Built with vanilla JS
 
 ## Screenshots and demo
 --
