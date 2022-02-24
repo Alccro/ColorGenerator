@@ -22,7 +22,7 @@ const generateRandomHex = () => {
 }
 
 /*Creating five hex number's to assign to the palette*/
-const createRandomHexArray = () => {
+let createRandomHexArray = () => {
     let randomHexArray = [];
     for (let i = 0; i < 5; i++){
         randomHexArray.push(generateRandomHex());
@@ -30,19 +30,37 @@ const createRandomHexArray = () => {
     return randomHexArray;
 }
 
+/*assigning Hex number's to the five color boxes*/
 const assignRandomHex = () => {
-    colorOneBox.style.backgroundColor = createRandomHexArray[0];
-    colorOneHex.innertext = createRandomHexArray[0];
-    colorTwoBox.style.backgroundColor = createRandomHexArray[1];
-    colorTwoHex.innertext = createRandomHexArray[1];
-    colorThreeBox.style.backgroundColor = createRandomHexArray[2];
-    colorThreeHex.innertext = createRandomHexArray[2];
-    colorFourBox.style.backgroundColor = createRandomHexArray[3];
-    colorFourHex.innertext = createRandomHexArray[3];  
-    colorFiveBox.style.backgroundColor = createRandomHexArray[4];
-    colorFiveHex.innertext = createRandomHexArray[4];
+    colorOneBox.style.backgroundColor = createRandomHexArray()[0];
+    colorOneHex.innerText = createRandomHexArray()[0];
+    colorTwoBox.style.backgroundColor = createRandomHexArray()[1];
+    colorTwoHex.innerText = createRandomHexArray()[1];
+    colorThreeBox.style.backgroundColor = createRandomHexArray()[2];
+    colorThreeHex.innerText = createRandomHexArray()[2];
+    colorFourBox.style.backgroundColor = createRandomHexArray()[3];
+    colorFourHex.innerText = createRandomHexArray()[3];  
+    colorFiveBox.style.backgroundColor = createRandomHexArray()[4];
+    colorFiveHex.innerText = createRandomHexArray()[4];
 }
 
 assignRandomHex()
 
-newPalette.addEventListener("click", () => assignRandomHex);
+/*event listeners for getting new palette on click and spacebar*/
+window.addEventListener("keypress", (e) => {
+    if(e.key === "space") {
+        assignRandomHex();
+     }
+})
+
+newPalette.addEventListener("click", () => assignRandomHex());
+
+/*event listener for copy to clipboard*/
+const hexId = document.querySelectorAll(".hexId")
+
+hexId.forEach(hex => {
+    hex.addEventListener("click", event => {
+        navigator.clipboard.writeText(hex.innerText);
+        alert("Copied Hex nr: " + hex.innerText + " to clipboard");
+    })
+})
