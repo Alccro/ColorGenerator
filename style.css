@@ -3,23 +3,50 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-#container {
-    display: flex;
-    flex-direction: column;
-    min-width: auto;
-    min-height: 100vh;
-    font-family: Helvetica, sans-serif;
-    background-color: #7ab8f7;
-    align-items: center;
-    text-align: center;
-}
-
+/*some basic formatting*/
 h1, h2, header > p {
     padding: 1rem;
 }
 
 p {
+    color: #000000;
+    font-family: "Roboto Serif", sans-serif;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    min-width: auto;
+    min-height: auto;
+    font-family: "Ubuntu", sans-serif;
+    background-color: #7ab8f7;
+}
+
+/*nav bar*/
+#navBar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.navList {
+    float: right
+}
+
+.navList a {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    padding: 1rem;
+    margin: 0;
+}
+
+a:hover {
+    background-color: #ffffff;
     color: #000000;
 }
 
@@ -29,7 +56,7 @@ p {
     margin: 2rem;
     padding: 2rem;
     background-color: #ffffff;
-    border-radius: 3px;
+    border-radius: 6px;
 }
 
 #colorsBox {
@@ -37,6 +64,7 @@ p {
     grid-template-columns: repeat(5, 1fr);
     background-color: #53a5f7;
     justify-items: center;
+    border-radius: 6px;
 }
 
 .colors {
@@ -48,23 +76,39 @@ p {
     width: 5rem;
 }
 
-.hexId {
-    color: #000000;
+/* .hexid {
     padding: 1rem;
     margin: 0.5rem;
-    background-color: #ffffff;
+    background-color: #000000;
     border-radius: 6px;
-}
+} */
 
-button:hover {
-    background-color: #dad6d6;
-    cursor: pointer;
-    transform: scale(1.2);
+button {
+    padding: 1rem;
+    color: #ffffff;
+    font-size: 0.85rem;
+    padding: .5rem;
+    background-color: #000000;
+    border-radius: 6px;
+    border: none;
+    text-decoration: none;
+    text-align: center;
 }
 
 button > p {
-    color: #000000;
-    font-size: 0.7rem;
+    color:#ffffff;
+    font-size: 0.85rem;
+}
+
+button:hover {
+    background-color: #583030;
+    cursor: pointer;
+}
+
+#copyToClipboard {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    margin: 0.5rem;
 }
 
 #newPalette {

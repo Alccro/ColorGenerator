@@ -9,6 +9,13 @@ const colorFourHex = document.getElementById("colorFourHex");
 const colorFiveBox = document.getElementById("colorFiveBox");
 const colorFiveHex = document.getElementById("colorFiveHex");
 const newPalette = document.getElementById("newPalette");
+const copyToClipboard = document.getElementById("copyToClipboard");
+const hexId = document.querySelectorAll(".hexId");
+const container = document.getElementById("container");
+const navBar = document.getElementById("navBar");
+const paletteBox = document.getElementById("paletteBox");
+const header = document.getElementById("header");
+const explanation = document.getElementById("explanation");
 
 /*Creating a single random hex number*/
 const generateRandomHex = () => {
@@ -29,38 +36,46 @@ let createRandomHexArray = () => {
     }
     return randomHexArray;
 }
+let storageArray = createRandomHexArray();
 
 /*assigning Hex number's to the five color boxes*/
 const assignRandomHex = () => {
-    colorOneBox.style.backgroundColor = createRandomHexArray()[0];
-    colorOneHex.innerText = createRandomHexArray()[0];
-    colorTwoBox.style.backgroundColor = createRandomHexArray()[1];
-    colorTwoHex.innerText = createRandomHexArray()[1];
-    colorThreeBox.style.backgroundColor = createRandomHexArray()[2];
-    colorThreeHex.innerText = createRandomHexArray()[2];
-    colorFourBox.style.backgroundColor = createRandomHexArray()[3];
-    colorFourHex.innerText = createRandomHexArray()[3];  
-    colorFiveBox.style.backgroundColor = createRandomHexArray()[4];
-    colorFiveHex.innerText = createRandomHexArray()[4];
+    colorOneBox.style.backgroundColor = storageArray[0];
+    colorOneHex.innerText = storageArray[0];
+    colorTwoBox.style.backgroundColor = storageArray[1];
+    colorTwoHex.innerText = storageArray[1];
+    colorThreeBox.style.backgroundColor = storageArray[2];
+    colorThreeHex.innerText = storageArray[2];
+    colorFourBox.style.backgroundColor = storageArray[3];
+    colorFourHex.innerText = storageArray[3];  
+    colorFiveBox.style.backgroundColor = storageArray[4];
+    colorFiveHex.innerText = storageArray[4];
+    header.style.backgroundColor = storageArray[0];
+    navBar.style.backgroundColor = storageArray[1];
+    paletteBox.style.backgroundColor = storageArray[2];
+    container.style.backgroundColor = storageArray[3];
+    explanation.style.color = storageArray[4];
 }
-
-assignRandomHex()
+assignRandomHex();
 
 /*event listeners for getting new palette on click and spacebar*/
+newPalette.addEventListener("click", () => {
+    storageArray = createRandomHexArray();
+    assignRandomHex();
+    copyToClipboard.innerText = "Click hex number to copy to clipboard"
+})
+
 window.addEventListener("keypress", (e) => {
     if(e.key === "space") {
         assignRandomHex();
      }
 })
 
-newPalette.addEventListener("click", () => assignRandomHex());
-
 /*event listener for copy to clipboard*/
-const hexId = document.querySelectorAll(".hexId")
-
 hexId.forEach(hex => {
     hex.addEventListener("click", event => {
         navigator.clipboard.writeText(hex.innerText);
-        alert("Copied Hex nr: " + hex.innerText + " to clipboard");
+        copyToClipboard.innerText = "Copied " + hex.innerText;
     })
 })
+

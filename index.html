@@ -7,16 +7,30 @@
   <meta name="description" content="A random color palette generator built as a learning project">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
  
 </head>
 
 <body>
     <div id="container">
+        <nav>
+            <ul id="navBar">
+                <li class="navList">
+                    <a class="navLink" href="">Palette Generator</a>
+                </li>
+                <li class="navList">
+                    <a class="navLink" href="">Gradient Generator</a>
+                </li>
+            </ul>
+        </nav>
         <header>
-            <h1>This is a Color Palette Generator</h1>
-            <h2>Here's how it works:</h2>
-            <p id="explanation">A random number generator builds a hex code and then each code is placed in one of the five boxes.</p>
+            <h1 id="header">This is a Color Palette Generator</h1>
+            <h2 id="header2">Here's how it works:</h2>
+            <p id="explanation">A function uses a random number generator to build a hex code by iterating 6 times. Another function captures 5 hex codes by running the first function 5 times. And finally a third function assigns a hex code to each box.</p>
         </header>
         <div id="paletteBox">
             <div id="colorsBox">
@@ -25,16 +39,23 @@
                 <div id="colorThreeBox" class="colors"></div>
                 <div id="colorFourBox" class="colors"></div>
                 <div id="colorFiveBox" class="colors"></div>
-                <button type="button" class="hexId"><p id="colorOneHex"></p><br>
-                    <p>Click to copy Hex</p></button>
-                <button type="button" class="hexId"><p id="colorTwoHex"></p><br>
-                    <p>Click to copy Hex</p></button>
-                <button type="button" class="hexId"><p id="colorThreeHex"></p><br>
-                    <p>Click to copy Hex</p></button>
-                <button type="button" class="hexId"><p id="colorFourHex"></p><br>
-                    <p>Click to copy Hex</p></button>
-                <button type="button" class="hexId"><p id="colorFiveHex"></p><br>
-                    <p>Click to copy Hex</p></button>
+                <button type="button" class="hexId">
+                    <p id="colorOneHex">
+                    </p>
+                </button>
+                <button type="button" class="hexId">
+                    <p id="colorTwoHex"></p>
+                </button>
+                <button type="button" class="hexId">
+                    <p id="colorThreeHex"></p>
+                </button>
+                <button type="button" class="hexId">
+                    <p id="colorFourHex"></p>
+                </button>
+                <button type="button" class="hexId">
+                    <p id="colorFiveHex"></p>
+                </button>
+                <p id="copyToClipboard">Click hex number to copy to clipboard</p>
             </div>
             <button id="newPalette" type="button">Click to get a new palette<br><p>(Or just press space)</p></button>
         </div>
