@@ -16,48 +16,69 @@
 </head>
 
 <body>
-    <div id="container">
-        <nav>
-            <ul id="navBar">
-                <li class="navList">
-                    <a class="navLink" href="">Palette Generator</a>
-                </li>
-                <li class="navList">
-                    <a class="navLink" href="">Gradient Generator</a>
-                </li>
-            </ul>
-        </nav>
+    <!-- <nav>
+        <ul id="navBar">
+            <li class="navList">
+                <a class="navLink" href="">Palette Generator</a>
+            </li>
+            <li class="navList">
+                <a class="navLink" href="">Gradient Generator</a>
+            </li>
+        </ul>
+    </nav> -->
+    <div id="paletteContainer">
         <header>
-            <h1 id="header">This is a Color Palette Generator</h1>
-            <h2 id="header2">Here's how it works:</h2>
+            <h1 id="paletteHeader">This is a Color Palette Generator</h1>
+            <h2 id="paletteHeaderTwo">Here's how it works:</h2>
             <p id="explanation">A function uses a random number generator to build a hex code by iterating 6 times. Another function captures 5 hex codes by running the first function 5 times. And finally a third function assigns a hex code to each box.</p>
         </header>
         <div id="paletteBox">
             <div id="colorsBox">
-                <div id="colorOneBox" class="colors"></div>
-                <div id="colorTwoBox" class="colors"></div>
-                <div id="colorThreeBox" class="colors"></div>
-                <div id="colorFourBox" class="colors"></div>
-                <div id="colorFiveBox" class="colors"></div>
-                <button type="button" class="hexId">
-                    <p id="colorOneHex">
-                    </p>
-                </button>
-                <button type="button" class="hexId">
-                    <p id="colorTwoHex"></p>
-                </button>
-                <button type="button" class="hexId">
-                    <p id="colorThreeHex"></p>
-                </button>
-                <button type="button" class="hexId">
-                    <p id="colorFourHex"></p>
-                </button>
-                <button type="button" class="hexId">
-                    <p id="colorFiveHex"></p>
-                </button>
+                <div id="colorOneBox" class="colors">
+                    <button type="button" class="hexId">
+                        <p id="colorOneHex"></p>
+                    </button>
+                </div>
+                <div id="colorTwoBox" class="colors">
+                    <button type="button" class="hexId">
+                        <p id="colorTwoHex"></p>
+                    </button>
+                </div>
+                <div id="colorThreeBox" class="colors">
+                    <button type="button" class="hexId">
+                        <p id="colorThreeHex"></p>
+                    </button>
+                </div>
+                <div id="colorFourBox" class="colors">
+                    <button type="button" class="hexId">
+                        <p id="colorFourHex"></p>
+                    </button>
+                </div>
+                <div id="colorFiveBox" class="colors">
+                    <button type="button" class="hexId">
+                        <p id="colorFiveHex"></p>
+                    </button>
+                </div>
                 <p id="copyToClipboard">Click hex number to copy to clipboard</p>
             </div>
             <button id="newPalette" type="button">Click to get a new palette<br><p>(Or just press space)</p></button>
+        </div>
+    </div>
+    <div id="gradientContainer">
+        <header>
+            <h1 id="gradientHeader">This is a Color Gradient Generator</h1>
+            <h2 id="gradientHeaderTwo">Here's how it works:</h2>
+            <p></p>
+        </header>
+        <div id="textGradientBox">
+            <p id="textGradientText">Your Text Gradient Looks Like This</p>
+            <input class="textGradient" type="color" id="textColor1" value="#0000ff">
+            <input class="textGradient" type="color" id="textColor2" value="#0ff000">
+        </div>
+        <div id="backgroundGradientBox">
+            <p id="backgroundGradientText">Your Background Gradient Looks Like This</p>
+            <input class="backgroundGradient" type="color" id="backgroundColor1" value="#00ff00">
+            <input class="backgroundGradient" type="color" id="backgroundColor2" value="#ff0000">
         </div>
     </div>
 
