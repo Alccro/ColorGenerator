@@ -9,7 +9,7 @@ h1, h2, header > p {
 }
 
 p {
-    color: #000000;
+    color: #ffffff;
     font-family: "Roboto Serif", sans-serif;
 }
 
@@ -19,7 +19,9 @@ p {
     min-width: auto;
     min-height: auto;
     font-family: "Ubuntu", sans-serif;
-    background-color: #7ab8f7;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
 }
 
 /* nav bar
@@ -73,7 +75,7 @@ a:hover {
     background-color: #000000;
     border-radius: 6px;
     height: 7rem;
-    width: 5rem;
+    width: 7rem;
 }
 
 button {
@@ -89,7 +91,7 @@ button {
     width: 100%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 680px) {
     #colorsBox {
         display: flex;
         flex-direction: column;
@@ -137,22 +139,40 @@ button:hover {
     margin: 0;
 }
 
-#backgroundGradientText {
+#gradientBox {
+    margin: 2rem;
     padding: 2rem;
-    margin: 0.5rem;
-    font-family: "Ubuntu", sans-serif;
-    font-size: 2rem;
+    background-color: #ffffff;
+    border-radius: 6px;
+    text-align: center;
 }
 
-#textGradientText {
-    padding: 2rem;
+#textGradient {
+    padding-top: 1rem;
     margin: 0.5rem;
     font-family: "Ubuntu", sans-serif;
     font-size: 2rem;
-    text-transform: strong;
+    font-weight: 700;
     background-image: linear-gradient(to right, #0000ff, #0ff000);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
 }
+
+#backgroundGradient {
+    padding: 2rem;
+    margin: 0.5rem;
+    border-radius: 6px;
+    width: auto;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 2vh;
+    color: #000000;
+    background-image: linear-gradient(to right,#00ff00, #ff0000);
+}
+
+input {
+    border: none;
+}
+
+
 

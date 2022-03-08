@@ -11,12 +11,7 @@ const colorFourHex = document.getElementById("colorFourHex");
 const colorFiveBox = document.getElementById("colorFiveBox");
 const colorFiveHex = document.getElementById("colorFiveHex");
 const newPalette = document.getElementById("newPalette");
-const copyToClipboard = document.getElementById("copyToClipboard");
 const hexId = document.querySelectorAll(".hexId");
-const container = document.getElementById("paletteContainer");
-const paletteHeaderTwo = document.getElementById("paletteHeaderTwo");
-const paletteBox = document.getElementById("paletteBox");
-const paletteHeader = document.getElementById("paletteHeader");
 
 // Creating a single random hex number //
 const generateRandomHex = () => {
@@ -51,11 +46,6 @@ const assignRandomHex = () => {
     colorFourHex.innerText = storageArray[3];  
     colorFiveBox.style.backgroundColor = storageArray[4];
     colorFiveHex.innerText = storageArray[4];
-    paletteHeader.style.backgroundColor = storageArray[0];
-    paletteHeaderTwo.style.backgroundColor = storageArray[1];
-    paletteBox.style.backgroundColor = storageArray[3];
-    paletteContainer.style.backgroundColor = storageArray[2];
-    newPalette.style.backgroundColor = storageArray[4];
 }
 assignRandomHex();
 
@@ -64,13 +54,13 @@ document.addEventListener("keypress", (s) => {
     if(s.key === "space") {
         assignRandomHex();
      }
-})
+});
 
 newPalette.addEventListener("click", () => {
     storageArray = createRandomHexArray();
     assignRandomHex();
     copyToClipboard.innerText = "Click hex number to copy to clipboard";
-})
+});
 
 // event listener for copy to clipboard //
 hexId.forEach(hex => {
@@ -78,42 +68,41 @@ hexId.forEach(hex => {
         navigator.clipboard.writeText(hex.innerText);
         copyToClipboard.innerText = "Copied " + hex.innerText;
     })
-})
+});
 
 // Color Gradient Generator //
 
-const textGradientText = document.getElementById("textGradientText");
+const textGradient = document.getElementById("textGradient");
 const textColor1 = document.getElementById("textColor1");
 const textColor2 = document.getElementById("textColor2");
-const backgroundGradientText = document.getElementById("backgroundGradientText");
+const backgroundGradient = document.getElementById("backgroundGradient");
 const backgroundColor1 = document.getElementById("backgroundColor1");
 const backgroundColor2 = document.getElementById("backgroundColor2");
 
-// const setGradientText = () => {
-//     textGradientText.style.background = "linear-gradient(to right, " 
-//     + textColor1.value 
-//     + ", " 
-//     + textColor2.value
-//     ")";
-//     textGradientText.style.backgroundClip = "text";
-//  	textGradientText.style.webkitTextFillColor = "transparent";
-// }
-// setGradientText();
+const setTextGradient = () => {
+    textGradient.style.backgroundImage = "linear-gradient(to right, " 
+    + textColor1.value 
+    + ", " 
+    + textColor2.value
+    ")";
+    textGradient.style.backgroundClip = "text";
+    textGradient.style.webkitbackgroundClip = "text";
+ 	textGradient.style.Color = "transparent";
+}
 
 const setBackgroundGradient = () => {
-    backgroundGradientText.style.background = "linear-gradient(to right, " 
+    backgroundGradient.style.backgroundImage = "linear-gradient(to right, " 
     + backgroundColor1.value 
     + ", " 
     + backgroundColor2.value
     ")";
 }
-setBackgroundGradient();
 
 // Event listeners for gradient colors //
 
-textColor1.addEventListener("input", setGradientText);
+textColor1.addEventListener("input", setTextGradient);
 
-textColor2.addEventListener("input", setGradientText);
+textColor2.addEventListener("input", setTextGradient);
 
 backgroundColor1.addEventListener("input", setBackgroundGradient);
 

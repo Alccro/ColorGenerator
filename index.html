@@ -28,7 +28,7 @@
     </nav> -->
     <div id="paletteContainer">
         <header>
-            <h1 id="paletteHeader">This is a Color Palette Generator</h1>
+            <h1 id="paletteHeader">Below is a Random Color Palette Generator</h1>
             <h2 id="paletteHeaderTwo">Here's how it works:</h2>
             <p id="explanation">A function uses a random number generator to build a hex code by iterating 6 times. Another function captures 5 hex codes by running the first function 5 times. And finally a third function assigns a hex code to each box.</p>
         </header>
@@ -66,19 +66,21 @@
     </div>
     <div id="gradientContainer">
         <header>
-            <h1 id="gradientHeader">This is a Color Gradient Generator</h1>
+            <h1 id="gradientHeader">Below is a Color Gradient Generator</h1>
             <h2 id="gradientHeaderTwo">Here's how it works:</h2>
-            <p></p>
+            <p>Choose you're two colors and a function applies them to the text or the background.</p>
         </header>
-        <div id="textGradientBox">
-            <p id="textGradientText">Your Text Gradient Looks Like This</p>
-            <input class="textGradient" type="color" id="textColor1" value="#0000ff">
-            <input class="textGradient" type="color" id="textColor2" value="#0ff000">
-        </div>
-        <div id="backgroundGradientBox">
-            <p id="backgroundGradientText">Your Background Gradient Looks Like This</p>
-            <input class="backgroundGradient" type="color" id="backgroundColor1" value="#00ff00">
-            <input class="backgroundGradient" type="color" id="backgroundColor2" value="#ff0000">
+        <div id="gradientBox">
+            <div id="textGradientBox">
+                <p id="textGradient">Your Text Gradient Looks Like This</p>
+                <input type="color" id="textColor1" value="#0000ff">
+                <input type="color" id="textColor2" value="#0ff000">
+            </div>
+            <div id="backgroundGradientBox">
+                <p id="backgroundGradient">This is your Background Gradient</p>
+                <input type="color" id="backgroundColor1" value="#00ff00">
+                <input type="color" id="backgroundColor2" value="#ff0000">
+            </div>
         </div>
     </div>
 
